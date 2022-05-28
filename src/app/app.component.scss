@@ -1,0 +1,42 @@
+.app {
+
+  &__search {
+    margin-top: 1rem;
+    display: flex;
+  }
+}
+.city-weather {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  margin-bottom: auto;
+
+  @media only screen and (max-width: 750px) {
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+.nav-tabs {
+  margin-bottom: auto;
+  margin-right: auto;
+  flex: 1;
+}
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  @media only screen and (max-width: 750px) {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}

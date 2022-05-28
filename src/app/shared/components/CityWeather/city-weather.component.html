@@ -1,0 +1,27 @@
+<mat-card class="city-weather__card">
+  <div class="city-weather__title">
+    <div class="city-weather__name">
+      <span>{{ weather.name }}</span>
+    </div>
+    <div class="city-weather__wind">
+      <span class="city-weather__wind-speed">{{ weather.wind.speed }} m/s</span>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">{{ windDirection }}</mat-icon>
+    </div>
+  </div>
+  <div class="city-weather__conditions">
+    <img src="{{'http://openweathermap.org/img/wn/' + weather.weather[0].icon + '.png'}}" alt="">
+    <div class="city-weather__weather-cont">
+      <span class="city-weather__weather-text">{{ weather.weather[0].main }}</span>
+      <span class="city-weather__weather-text">{{ weather.weather[0].description }}</span>
+    </div>
+  </div>
+  <div class="city-weather__coordinates">
+    <span class="city-weather__coordinate">Latitude: {{ weather.coord.lat }}</span>
+    <span class="city-weather__coordinate">Longitude: {{ weather.coord.lon }}</span>
+  </div>
+  <div class="city-weather__temperature">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">thermostat</mat-icon>
+    <span class="city-weather__temp-count">{{ weather.main.temp_min }}°C - {{ weather.main.temp_max }}°C, Feels like {{ weather.main.feels_like }}°C</span>
+  </div>
+  <google-map height="10rem" width="100%" [zoom]="8" [center]="center"></google-map>
+</mat-card>

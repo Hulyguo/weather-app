@@ -1,0 +1,112 @@
+@import '../../../../assets/scss/abstracts/variables';
+@import '../../../../assets/scss/abstracts/mixins';
+
+.city-weather {
+
+  &__name {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    color: $color-white;
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    @include rounded-light;
+    border: none;
+    background: $color-primary;
+  }
+
+  &__wind {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 1rem;
+    color: $color-black;
+    @include rounded-light;
+    border: none;
+    background: $color-light;
+    padding: 0.4rem 0.6rem;
+  }
+
+  &__wind-speed {
+    margin-right: 0.5rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  &__coordinates {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__coordinate {
+    color: $color-white;
+    justify-content: center;
+    @include rounded-light;
+    background: $color-green;
+    padding: 0.2rem 0.5rem;
+    flex: 1;
+
+    &:not(:last-of-type) {
+      margin-right: 0.5rem;
+    }
+  }
+  
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-width: 20rem;
+    
+    @media only screen and (max-width: 750px) {
+      margin-top: 1rem;
+      min-width: auto;
+    }
+  }
+
+  &__temperature {
+    display: flex;
+    align-items: flex-end;
+    background: $color-tertiary;
+    @include rounded-light;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__temp-count {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__conditions {
+    @include rounded-light;
+    display: flex;
+    margin-bottom: 0.5rem;
+    background: rgba($color-black, 0.1);
+  }
+
+  &__weather-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 0.5rem;
+    padding: 0.4rem 0;
+  }
+
+  &__weather-text {
+    font-size: 0.8rem;
+    font-weight: normal;
+
+    &:not(:last-of-type) {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,3 +1,8 @@
+# Prerequisites
+
+1. Set API key for weather API in config.services.ts
+2. Set API key for google maps in place of API_KEY_HERE
+
 # App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.

@@ -1,0 +1,27 @@
+.filter {
+  min-width: 15rem;
+  margin-right: 1.5rem;
+  height: 100%;
+  
+  @media only screen and (max-width: 750px) {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  &__preset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  &__divider {
+    position: relative !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__coordinates {
+    display: flex;
+    flex-direction: column;
+  }
+}

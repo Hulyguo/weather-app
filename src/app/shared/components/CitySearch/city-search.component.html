@@ -1,0 +1,26 @@
+<mat-card class="filter">
+  <div class="filter__preset">
+    <mat-form-field appearance="fill">
+      <mat-label>City preset</mat-label>
+      <mat-select id="city-select" name="cities" ngModel [(value)]="selectedCity">
+        <mat-option *ngFor="let city of storedCities" [value]="city">
+          {{ city.name.length ? city.name : ! 'No city found' }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="setPreset()" mat-raised-button color="primary">Set preset</button>
+  </div>
+  <mat-divider class="filter__divider"></mat-divider>
+  <div class="filter__coordinates">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Latitude</mat-label>
+      <input id="latitude"  matInput [(ngModel)]="latitude" placeholder="Latitude">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Longitude</mat-label>
+      <input id="longitude" matInput [(ngModel)]="longitude" placeholder="Longitude">
+    </mat-form-field>
+    
+    <button mat-button (click)="fetchData()" mat-raised-button color="primary">Fetch data</button>
+  </div>
+</mat-card>

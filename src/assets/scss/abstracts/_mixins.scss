@@ -1,0 +1,5 @@
+@mixin rounded-light {
+  border: solid 0.1rem rgba($color-black, 0.05);
+  border-radius: 0.4rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+}
