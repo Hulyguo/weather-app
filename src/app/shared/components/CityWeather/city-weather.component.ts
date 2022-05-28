@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { WeatherResponse } from '../../models/location';
 import { calculateWindDirection } from '../../utils/wind-utils';
 
@@ -11,6 +11,7 @@ export class CityWeatherComponent {
   @Input() weather!: WeatherResponse;
   windDirection!: string;
   center!: any;
+  
   ngOnChanges() {
     this.windDirection = calculateWindDirection(this.weather.wind.deg);
     const { lat, lon } = this.weather.coord;

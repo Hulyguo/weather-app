@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ApiWeatherService } from 'src/app/core/services/api-weather.service';
 import { City, Coordinates, WeatherResponse } from '../../models/location';
 import cities from '../../../data/cities.json';
@@ -34,8 +33,10 @@ export class CitySearchComponent {
   fetchData() {
     if (!this.latitude || !this.longitude) return alert('Please select a city');
 
-    this.apiWeatherService.getByCoordinates({lat: this.latitude, lon: this.longitude }).subscribe(res => {
-      this.onCityFetched.emit(res);
-    });
+    this.apiWeatherService.getByCoordinates({lat: this.latitude, lon: this.longitude })
+      .subscribe({
+        next: res => this.onCityFetched.emit(res),
+        error: () => alert('An error has occurred, please refresh the page'),
+      });
   }
 }

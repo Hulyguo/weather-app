@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiWeatherService } from 'src/app/core/services/api-weather.service';
-
 import dashboard from '../../../data/dashboard.json';
 import { City, WeatherResponse } from '../../models/location';
 
@@ -21,8 +20,9 @@ export class DashboardComponent implements OnInit {
     this.weather = [];
     for (let city of this.cities) {
       const { lat, lon } = city.coord;
-      this.apiWeatherService.getByCoordinates({lat, lon }).subscribe(res => {
-        this.weather.push(res);
+      this.apiWeatherService.getByCoordinates({lat, lon }).subscribe({
+        next: res => this.weather.push(res),
+        error: err => alert('An error has occurred, please refresh the page'),
       });
     }
   }

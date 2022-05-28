@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { City, Coordinates, WeatherResponse } from 'src/app/shared/models/location';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Coordinates, WeatherResponse } from 'src/app/shared/models/location';
+import { Observable, throwError } from 'rxjs';
 
 import { API_ENDPOINT, API_KEY } from 'src/app/config/api';
 

@@ -3,6 +3,10 @@
   &__search {
     margin-top: 1rem;
     display: flex;
+
+    @media only screen and (max-width: 750px) {
+      flex-direction: column;
+    }
   }
 }
 .city-weather {
@@ -24,6 +28,7 @@
   margin-bottom: auto;
   margin-right: auto;
   flex: 1;
+  width: 100%;
 }
 
 
