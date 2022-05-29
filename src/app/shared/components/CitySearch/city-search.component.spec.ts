@@ -1,5 +1,5 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,6 +13,8 @@ import data from '../../../data/cities.json';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { City } from '../../models/location';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
 
 describe('CitySearchComponent', () => {
   const cities: City[] = data;
@@ -26,7 +28,9 @@ describe('CitySearchComponent', () => {
         MatInputModule,
         MatDividerModule,
         MatSelectModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        FormsModule
       ],
       declarations: [
         CitySearchComponent
@@ -56,7 +60,7 @@ describe('CitySearchComponent', () => {
     expect(window.alert).toHaveBeenCalledOnceWith('Select a city');
   });
   
-  it('should set component longitude and latitude on setPreset', async () => {
+  it('should set component longitude and latitude on setPreset', () => {
     const fixture = TestBed.createComponent(CitySearchComponent);
     fixture.componentInstance.selectedCity = cities[0];
     fixture.componentInstance.setPreset();
@@ -65,8 +69,4 @@ describe('CitySearchComponent', () => {
     expect(fixture.componentInstance.longitude).toBe(25.2798);
     expect(fixture.componentInstance.latitude).toBe(54.689159);
   });
-
-  // I'm not sure how testing should be implemented correctly 
-  // For inputs with 2 way binding in angular, was trying to write some event driven
-  // Tests from the user perspective but to no avail :/
 });

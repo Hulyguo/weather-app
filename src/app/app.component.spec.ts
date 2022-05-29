@@ -5,6 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { CitySearchComponent } from './shared/components/CitySearch/city-search.component';
@@ -19,7 +21,9 @@ describe('AppComponent', () => {
         MatDividerModule,
         MatSelectModule,
         MatCardModule,
-        GoogleMapsModule
+        GoogleMapsModule,
+        MatToolbarModule,
+        MatTabsModule
       ],
       declarations: [
         AppComponent,
